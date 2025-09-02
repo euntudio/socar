@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 공통적인 스타일 */
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+body {
+    background-color: #141a24;
+    /* 전체 배경색 지정 */
+    color: #fff;
+    /* 전체 폰트색상 */
+    line-height: 1.5;
+    /* 글자크기의 * 1.5배 */
+}
+
+.header {
+    z-index: 999;
+}
+
+.header .inner,
+.footer .inner {
+    max-width: 1536px;
+    /* 데스크탑 영역 기준 */
+    width: calc(100% -96px);
+    /* 태블릿 좌우 여백값 */
+    margin: 0 auto;
+}
+
+/* 헤더와 푸터 넓이 같음 */
+
+.main .inner {
+    max-width: 1012px;
+    /* 데스크탑 영역 기준 */
+    width: calc(100% - 96px);
+    /* 태블릿 기준 */
+    margin: 0 auto;
+}
+
+/* 메인 전체 영역 넓이 잡아주기 */
+
+.main .inner h3 {
+    font-size: 37px;
+    /* 전체 타이틀 제목 크기 */
+    margin-bottom: 96px;
+    /* 타이틀 밑 여백 */
+}
+
+.main .inner h3 strong {
+    display: block;
+    /* 줄바꿈처리 */
+}
+
+.header {
+    width: 100%;
+    height: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height : 100%가 있어야함. */
+}
+
+.header .inner .logo {
+    height: 36px;
+}
+
+.header .inner .logo a {
+    display: block;
+    /* 인라인 태그이기 때문 */
+    height: 100%;
+}
+
+.header .inner .logo a img {
+    height: 100%;
+    display: block;
+}
+
+.header .inner .menu_open {
+    height: 29px;
+}
+
+.header .inner .menu_open img {}
+
+.header .inner .nav {
+    display: none;
+}
+
+.header .inner .nav .menu_close {}
+
+.header .inner .nav .menu_close img {}
+
+.header .inner .nav .gnb {}
+
+.header .inner .nav .gnb li {}
+
+.header .inner .nav .gnb li a.depth-01 {}
+
+/* main_visual */
+.main_visual {
+    height: 100vh;
+    /* 화면 높이값 만큼 */
+    position: relative;
+}
+
+.main_visual video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual .text {
+    width: 100%;
+    /* 메인비주얼 텍스트 줄바꿈 현상 3 넓이값 주기 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* 메인비주얼 텍스트 줄바꿈 현상 1 */
+    transform: translate(0, -50%);
+    /* 메인비주얼 텍스트 줄바꿈 현상 2 */
+    text-align: center;
+    /* 글자 가운데 정렬 잊지않기 */
+}
+
+.main_visual .text h2 {
+    font-size: 95px;
+
+}
+
+.main_visual .text p {
+    font-size: 40px;
+}
+
+.main_visual .visual_btn {
+    /* 헤더 컨테이너 기준으로 우측 배치 */
+    max-width: 1536px;
+    width: calc(100% - 96px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_visual .visual_btn a {
+    width: 228px;
+    height: 72px;
+    background-color: #0078FF;
+    display: block;
+    /* 인라인태그 */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_visual .visual_btn a img {
+    width: 18px;
+}
+
+.main_visual .visual_btn a span {
+    font-size: 20px;
+}
+
+/* section-01 */
+.section-01 {
+    padding: 160px 0 96px;
+}
+
+.section-01 .inner {}
+
+.section-01 .inner h3 {}
+
+.section-01 .inner h3 strong {}
+
+.section-01 .inner .slides {
+    position: relative;
+}
+
+.section-01 .inner .slides .list {}
+
+.section-01 .inner .slides .list .item {
+    position: relative;
+    width: 100%;
+    height: 524px;
+    /* 태블릿에서 가로만 줄어드는지, 세로만 줄어드는지 확인 / 가로만 줄어들기 때문에 고정해서 작성 */
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.section-01 .inner .slides .list .item.active {
+    display: block;
+}
+
+.section-01 .inner .slides .list .item::before {
+    /* 가상요소 그라데이션 만들기 */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 40%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.section-01 .inner .slides .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-01 .inner .slides .list .item .text {
+    padding: 48px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.section-01 .inner .slides .list .item .text strong {
+    font-size: 33px;
+}
+
+.section-01 .inner .slides .list .item .text p {
+    font-size: 18px;
+    margin-top: 7px;
+}
+
+.section-01 .inner .slides .slide_navigation button {
+    position: absolute;
+    width: 49px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.section-01 .inner .slides .slide_navigation button img {
+    width: 100%;
+}
+
+.section-01 .inner .slides .slide_navigation .next {
+    right: 30px;
+}
+
+.section-01 .inner .slides .slide_navigation .next img {}
+
+.section-01 .inner .slides .slide_navigation .prev {
+    left: 30px;
+}
+
+.section-01 .inner .slides .slide_navigation .prev img {}
+
+
+/* section-02 */
+.section-02 {
+    padding: 160px 0;
+}
+
+.section-02 .inner {}
+
+.section-02 .inner h3 {}
+
+.section-02 .inner h3 strong {}
+
+.section-02 .inner .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 36px;
+}
+
+.section-02 .inner .list .item {
+    width: 48.22%;
+    /* 488 / 1012 * 100 */
+
+}
+.section-02 .inner .list .item:hover a::before{
+    display: block;
+}
+.section-02 .inner .list .item:hover .text_wrap .item_btn img.before{
+    display: none;
+}
+.section-02 .inner .list .item:hover .text_wrap .item_btn img.after{
+    display: block;
+    z-index: 9;
+}
+.section-02 .inner .list .item a {
+    display: block;
+    padding-bottom: 132.58%;
+    /* 세로 / 가로 * 100 */
+    position: relative;
+    
+}
+
+.section-02 .inner .list .item a::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    display: none;
+}
+
+.section-02 .inner .list .item a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.section-02 .inner .list .item a .text_wrap {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-02 .inner .list .item a .text_wrap .text {}
+
+.section-02 .inner .list .item a .text_wrap .text strong {
+    font-size: 33px;
+}
+
+.section-02 .inner .list .item a .text_wrap .text p {
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.section-02 .inner .list .item a .text_wrap .item_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-02 .inner .list .item a .text_wrap .item_btn img.before {}
+
+.section-02 .inner .list .item a .text_wrap .item_btn img.after {
+    display: none;
+}
+
+/* section-03 */
+.section-03{
+    height: 250px; /* 데스크탑, 태블릿, 모바일 높이값 동일한지 확인 */
+    position: relative;
+}
+.section-03 a{}
+.section-03 a::before{ /* 가상요소선택자는 a태그에 작성해준다. 그래야만 링크가 걸린다. */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.section-03 a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-03 a .text_wrap{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.section-03 a .text_wrap strong{
+    font-size: 33px;
+}
+
+.section-03 a .text_wrap .btn{
+    height: 75px;
+    border: 1px solid #fff;
+    padding: 0 31px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+
+}
+.section-03 a .text_wrap .btn span{
+    font-size: 20px;
+}
+.section-03 a .text_wrap .btn img{
+    width: 32px;
+}
